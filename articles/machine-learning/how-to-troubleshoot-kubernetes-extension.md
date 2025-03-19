@@ -80,9 +80,9 @@ kubectl logs healthcheck -n azureml
 ```
 ## Extension-operator pod in azure-arc/kube-system namespace is crashing due to OOMKill 
 This issue occurs when the extension's Helm chart size is large and there are multiple Helm releases on the cluster.
-To check the Helm history of the Azure ML extension, use the following commands:
+To check the Helm history of the Azure Machine Learning extension, use the following commands:
 ```
-# Check if there is a release of the Azure ML extension Helm chart installed on the cluster
+# Check if there is a release of the Azure Machine Learning extension Helm chart installed on the cluster
 # Note: The default namespace for the extension is usually 'azureml'. If you specified a different namespace during installation, replace 'azureml' with your namespace.
 helm list -n azureml
 
@@ -96,8 +96,8 @@ If you see multiple revisions in a pending-rollback or pending-upgrade state in 
 #!/bin/bash
 
 # Set release name and namespace
-RELEASE_NAME=$1 # release_name is the name of the azure ml extension helm release 
-NAMESPACE=$2 # namespace is the azure ml extension's namespace. Default value is azureml 
+RELEASE_NAME=$1 # release_name is the name of the Azure Machine Learning extension helm release 
+NAMESPACE=$2 # namespace is the Azure Machine Learning extension's namespace. Default value is azureml 
 
 # Validate input
 if [[ -z "$RELEASE_NAME" || -z "$NAMESPACE" ]]; then
